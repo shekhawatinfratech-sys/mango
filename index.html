@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MBS Intake Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Maximum Building Services</h1>
+    <p>Saving Structures. Saving Lives.</p>
+  </header>
+
+  <main>
+    <form id="buildingForm">
+      <h2>Society Details</h2>
+      <label>Society Name <input id="socName" required /></label>
+      <label>Location <input id="location" /></label>
+      <label>Year of OC <input id="ocYear" type="number" /></label>
+      <label>Floors <input id="floors" type="number" /></label>
+
+      <h2>Upload Photos</h2>
+      <input id="media" type="file" multiple />
+
+      <button type="submit">Save</button>
+    </form>
+
+    <aside id="copilot">
+      <h3>AI Copilot</h3>
+      <p id="leadScore">Lead Score: –</p>
+      <p id="aiNotes">AI Notes will appear here…</p>
+      <ul id="events"></ul>
+    </aside>
+
+    <!-- List block -->
+    <section id="list" style="flex:1;background:#1a2235;padding:1rem;border-radius:8px;">
+      <h3>Societies</h3>
+      <ul id="socList" style="list-style:none;padding-left:0;margin:0;"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2025 MBS – Demo site</small>
+  </footer>
+
+  <!-- (Optional) Supabase CDN. We’ll wire this later in Step 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
