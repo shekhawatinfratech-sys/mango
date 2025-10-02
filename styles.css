@@ -1,0 +1,9 @@
+body { margin: 0; font-family: Arial, sans-serif; background: #0b0e13; color: #e7edf6; }
+header, footer { background: #0f1420; padding: 1rem; text-align: center; }
+main { display: flex; gap: 2rem; padding: 1rem; flex-wrap: wrap; }
+form, #copilot, #list { flex: 1 1 320px; background: #1a2235; padding: 1rem; border-radius: 8px; min-width: 320px; }
+form label { display: block; margin-bottom: 0.6rem; }
+input { width: 100%; padding: 8px; margin-top: 4px; border-radius: 6px; border: 1px solid #2b3d5b; background: #0b1320; color: #fff; }
+button { margin-top: 1rem; padding: 0.6rem 1rem; background: #2563eb; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+#events { list-style: none; padding-left: 0; margin-top: 1rem; }
+#events li { font-size: 12px; color: #9fb2cf; margin: 4px 0; }
