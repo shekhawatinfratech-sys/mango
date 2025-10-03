@@ -59,3 +59,22 @@ async function refreshList(){
   }).join("") || "<li style='color:#9fb2cf'>No records yet</li>";
 }
 refreshList();
+const btnHealth = document.getElementById("btnHealth");
+const healthOut = document.getElementById("healthOut");
+
+if (btnHealth) {
+  btnHealth.addEventListener("click", async () => {
+    healthOut.textContent = "Checking...";
+    try {
+      // Try a simple select (should work if URL/key/RLS are OK)
+      const { data, error } = await client.from("societies").select("id").limit(1);
+      if (error) {
+        healthOut.textContent = "Error: " + error.message;
+      } else {
+        healthOut.textContent = "OK ✅ Able to query `societies`.\nRows found (first page): " + (data?.length ?? 0);
+      }
+    } catch (e) {
+      healthOut.textContent = "Exception: " + String(e);
+    }
+  });
+}
