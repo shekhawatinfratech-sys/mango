@@ -1,8 +1,7 @@
 
-const SUPABASE_URL = "https://laoqldlqgjbubsgtsgqt.supabase.co";
+const SUPABASE_URL = https://laoqldlqgjbubsgtsgqt.supabase.co;
 
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxhb3FsZGxxZ2pidWJzZ3RzZ3F0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk1MDIxNDUsImV4cCI6MjA3NTA3ODE0NX0.6d3v8c14pDDGAYdM5Px3EXnyQobRRqjAb2rTU3o7niM
-ey...";          
 
 /***** 2) INIT *****/
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
