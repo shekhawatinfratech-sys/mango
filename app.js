@@ -78,3 +78,159 @@ if (btnHealth) {
     }
   });
 }
+// ====== ULTRA-LOUD GLOBAL ERROR HANDLER ======
+window.onerror = function (msg, src, line, col, err) {
+  const out = document.getElementById("healthOut");
+  if (out) {
+    out.textContent = "Global error: " + msg + "\n" + (err ? (err.stack || err) : "") + "\n@" + src + ":" + line + ":" + col;
+  } else {
+    alert("Global error: " + msg);
+  }
+};
+
+// ====== SHOW THAT app.js ITSELF LOADED ======
+(function showLoadedBanner(){
+  const el = document.getElementById("healthOut");
+  if (el) el.textContent = "HealthCheck ready. (app.js loaded)";
+  else console.log("HealthOut element not found yet");
+})();
+
+// ====== EXPOSED FUNCTION CALLED BY BUTTON ONCLICK ======
+window.healthCheck = async function(){
+  const out = document.getElementById("healthOut");
+  if (!out) { alert("healthOut element missing in HTML"); return; }
+
+  out.textContent = "Checking…";
+
+  try {
+    // 1) Prove Supabase CDN loaded
+    if (typeof supabase === "undefined") {
+      out.textContent = "Error: supabase global is NOT defined. Did you include the CDN before app.js in index.html?";
+      return;
+    }
+
+    // 2) Prove your client exists (defined earlier in app.js)
+    if (typeof client === "undefined" || !client) {
+      out.textContent = "Error: Supabase client not initialised. Check SUPABASE_URL and SUPABASE_ANON_KEY at the TOP of app.js.";
+      return;
+    }
+
+    // 3) Try a trivial query (hits RLS policies)
+    const { data, error } = await client.from("societies").select("id").limit(1);
+    if (error) {
+      out.textContent = "Query error: " + error.message;
+      return;
+    }
+
+    out.textContent = "OK ✅ Able to query `societies`. Rows returned: " + (data?.length ?? 0);
+  } catch (e) {
+    out.textContent = "Exception: " + String(e);
+  }
+};// ====== ULTRA-LOUD GLOBAL ERROR HANDLER ======
+window.onerror = function (msg, src, line, col, err) {
+  const out = document.getElementById("healthOut");
+  if (out) {
+    out.textContent = "Global error: " + msg + "\n" + (err ? (err.stack || err) : "") + "\n@" + src + ":" + line + ":" + col;
+  } else {
+    alert("Global error: " + msg);
+  }
+};
+
+// ====== SHOW THAT app.js ITSELF LOADED ======
+(function showLoadedBanner(){
+  const el = document.getElementById("healthOut");
+  if (el) el.textContent = "HealthCheck ready. (app.js loaded)";
+  else console.log("HealthOut element not found yet");
+})();
+
+// ====== EXPOSED FUNCTION CALLED BY BUTTON ONCLICK ======
+window.healthCheck = async function(){
+  const out = document.getElementById("healthOut");
+  if (!out) { alert("healthOut element missing in HTML"); return; }
+
+  out.textContent = "Checking…";
+
+  try {
+    // 1) Prove Supabase CDN loaded
+    if (typeof supabase === "undefined") {
+      out.textContent = "Error: supabase global is NOT defined. Did you include the CDN before app.js in index.html?";
+      return;
+    }
+
+    // 2) Prove your client exists (defined earlier in app.js)
+    if (typeof client === "undefined" || !client) {
+      out.textContent = "Error: Supabase client not initialised. Check SUPABASE_URL and SUPABASE_ANON_KEY at the TOP of app.js.";
+      return;
+    }
+
+    // 3) Try a trivial query (hits RLS policies)
+    const { data, error } = await client.from("societies").select("id").limit(1);
+    if (error) {
+      out.textContent = "Query error: " + error.message;
+      return;
+    }
+
+    out.textContent = "OK ✅ Able to query `societies`. Rows returned: " + (data?.length ?? 0);
+  } catch (e) {
+    out.textContent = "Exception: " + String(e);
+  }
+};
+// ====== ULTRA-LOUD GLOBAL ERROR HANDLER ======
+window.onerror = function (msg, src, line, col, err) {
+  const out = document.getElementById("healthOut");
+  if (out) {
+    out.textContent = "Global error: " + msg + "\n" + (err ? (err.stack || err) : "") + "\n@" + src + ":" + line + ":" + col;
+  } else {
+    alert("Global error: " + msg);
+  }
+};// ====== ULTRA-LOUD GLOBAL ERROR HANDLER ======
+window.onerror = function (msg, src, line, col, err) {
+  const out = document.getElementById("healthOut");
+  if (out) {
+    out.textContent = "Global error: " + msg + "\n" + (err ? (err.stack || err) : "") + "\n@" + src + ":" + line + ":" + col;
+  } else {
+    alert("Global error: " + msg);
+  }
+};
+
+// ====== SHOW THAT app.js ITSELF LOADED ======
+(function showLoadedBanner(){
+  const el = document.getElementById("healthOut");
+  if (el) el.textContent = "HealthCheck ready. (app.js loaded)";
+  else console.log("HealthOut element not found yet");
+})();
+
+// ====== EXPOSED FUNCTION CALLED BY BUTTON ONCLICK ======
+window.healthCheck = async function(){
+  const out = document.getElementById("healthOut");
+  if (!out) { alert("healthOut element missing in HTML"); return; }
+
+  out.textContent = "Checking…";
+
+  try {
+    // 1) Prove Supabase CDN loaded
+    if (typeof supabase === "undefined") {
+      out.textContent = "Error: supabase global is NOT defined. Did you include the CDN before app.js in index.html?";
+      return;
+    }
+
+    // 2) Prove your client exists (defined earlier in app.js)
+    if (typeof client === "undefined" || !client) {
+      out.textContent = "Error: Supabase client not initialised. Check SUPABASE_URL and SUPABASE_ANON_KEY at the TOP of app.js.";
+      return;
+    }
+
+    // 3) Try a trivial query (hits RLS policies)
+    const { data, error } = await client.from("societies").select("id").limit(1);
+    if (error) {
+      out.textContent = "Query error: " + error.message;
+      return;
+    }
+
+    out.textContent = "OK ✅ Able to query `societies`. Rows returned: " + (data?.length ?? 0);
+  } catch (e) {
+    out.textContent = "Exception: " + String(e);
+  }
+};
+
+
