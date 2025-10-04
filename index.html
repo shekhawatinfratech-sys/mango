@@ -49,5 +49,17 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script src="app.js"></script>
+<!-- Supabase CDN must come BEFORE app.js -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+<!-- Load your JS with a cache-buster so you really get the latest version -->
+<script src="app.js?v=3"></script>
+
+<!-- Tiny inline test to prove JS runs at all -->
+<script>
+  // If you see this alert once after reload, JS is executing on the page
+  // Comment it out after first test if you want
+  // alert("JS loaded (inline test). If you see this, scripts are running.");
+</script>
 </body>
 </html>
